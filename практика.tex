@@ -1,0 +1,232 @@
+\documentclass[a4paper,12pt]{article} % тип документа
+
+% report, book
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+% Рисунки
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{{logo/}}
+\usepackage{hyperref}
+\usepackage[rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    colorlinks=true,       	% false: ссылки в рамках
+	urlcolor=blue          % на URL
+	}
+%  Русский язык
+
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+
+\usepackage{wasysym}
+
+%Заговолок
+\author{Костюньков Данила Сергеевич}
+\title{Практика в \LaTeX{}}
+\date{\today}
+
+\begin{document}
+\setlength{\leftskip}{2mm}
+\setlength{\rightskip}{2mm}
+\newpage
+\begin{center}
+Министерство науки и высшего образования\\
+Федеральное государственное бюджетное образовательное\\
+учреждение высшего образования\\
+“Московский государственный технический университет\\
+имени Н.Э. Баумана\\
+(национальный исследовательский университет)”\\
+(МГТУ им. Н.Э. Баумана)\\
+\hrulefill\\
+\end{center}
+\begin{center}
+\includegraphics[width=5cm]{logo}
+\end{center}
+\begin{center}
+Факультет “Фундаментальные науки”\\
+Кафедра “Высшая математика”\\
+~\\
+~\\
+\textbf{\Huge Отчёт\\
+по учебной практике\\
+за 1 семестр 2020—2021 гг.}\\
+~\\
+~\\
+Руководитель практики, ст. преп. кафедры ФН1\\ $\underset{\text{подпись}}{\underline{\hspace{0.2\textwidth}}}$ Кравченко О.В.\\
+ 
+студент группы ФН1–11 $\underset{\text{подпись}}{\underline{\hspace{0.2\textwidth}}}$ Костюньков Д.С.\\
+\vspace{5cm}
+\begin{center}
+Москва,\\
+2020
+\end{center}
+
+
+\end{center}
+
+
+\newpage	
+\tableofcontents
+\newpage
+\section{Цели и задачи практики} 
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+
+\subsection{Задачи}
+\begin{itemize}
+
+
+\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+\item Развитие навыков составления отчётов и презентации результатов.
+\end{itemize}
+\subsection{Индивидуальное задание} 
+\begin{itemize}
+\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+\item Изучить возможности системы контроля версий \textsf{Git}.
+\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+и результат компиляции в формате \textsf{pdf}.
+
+\end{itemize} 
+
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src / part1. tex}
+
+%=================================================================================================================================
+\subsection{Пределы и непрерывность.}
+\begin{center}
+
+\textbf{Задача № 1.}
+\end{center}\\
+\textbf{Условие.} Дана последовательность $\left\lbrace a_n \right\rbrace=\frac{4n^2+1}{3n^2+2}$ и число $c=\frac{4}{3}$.Доказать, что \[ \lim \limits_{n \to \infty} \left\lbrace {a_n} \right\rbrace =c,\]\\
+а именно, для каждого сколь угодно малого числа $\varepsilon$ >0 найти наименьшее натуральное
+число $N = N(\varepsilon )$ такое, что |$ a_n $ $-$ $c$ | < $\varepsilon$ для всех номеров n > $N(\varepsilon)$. Заполнить таблицу\\
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$\varepsilon$ & 0,1 & 0,01 & 0,001 \\ 
+\hline 
+$N(\varepsilon)$ & {} & {} & {} \\ 
+\hline 
+\end{tabular} 
+\end{center}\\
+\textbf {Решение.} Рассмотрим неравенство $ a_n $ $-$ $c$ < $\varepsilon$ ,$\forall \varepsilon$>0, учитывая выражение для $ a_n $ и значение $c$ из условия варианта, получим\\
+\begin{center}
+\[\left|\frac{4n^2+1}{3n^2+2}-\frac{4}{3}\right|<\varepsilon\]
+\end{center}\\
+Неравенство запишем в виде двойного неравентсва и приведём выражение под знаком модуля к общему знаменателю, получим\\
+\begin{center}
+\[-\varepsilon<-\frac{5}{3(3n^2+3)}<\varepsilon\]\\
+\end{center}
+Заметим, что правое неравенство выполнено для любого номера $n \in N$ поэтому, будем
+рассматривать левое неравенство\\
+\begin{center}
+\[-\frac{5}{3(3n^2+3)}>\varepsilon\]\\
+\end{center}\\
+Выполнив цепочку преобразований, перепишем неравенство относительно $n^2$, и учитывая,что $n \in N$, получим \\
+\begin{center}
+\[-\frac{5}{3(3n^2+3)}>\varepsilon\]\\
+\[(3n^2+3)<-\frac{5}{3\varepsilon}\]\\
+\[n^2<\frac{1}{3}(-\frac{5}{3\varepsilon}\]\\
+\[n>\frac{1}{3}\sqrt{\frac{5+9\varepsilon}{\varepsilon}}\]\\
+\[N(\varepsilon)=\left[\frac{1}{3}\sqrt{\frac{5+9\varepsilon}{\varepsilon}}\right]\]\\ 
+\end{center}\\
+где [ ] — целая часть числа. Заполним таблицу:\\
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\varepsilon & 0,1 & 0,01 & 0,001 \\ 
+\hline 
+\[N(\varepsilon)\] & 2 & 7 & 23 \\ 
+\hline 
+\end{tabular} 
+\end{center}\\
+\textbf{Проверка:}\\
+\begin{center}
+\begin{aligned}
+& |$ a_3 $ $-$ $c$ |=$\frac{-5}{87}<0,1$\\
+& |$ a_8 $ $-$ $c$ |=$\frac{-5}{582}<0,01$\\
+& |$ a_24 $ $-$ $c$ |=$\frac{-5}{5190}<0,001$\\
+\end{aligned}
+\end{center}\\
+\begin{center}
+
+\textbf{Задача № 2.}
+
+\end{center}\\
+\textbf{Условие.} Вычислить пределы функций\\
+\[(a):  \lim \limits_{x \to 4} \frac{x^2-3x-4}{x^3-6x^2+32}  ,\]\\
+\[(b):  \lim \limits_{x \to 0} \frac{\sqrt{1-x}-\sqrt{1+x}}{x}  ,\]\\
+\textbf {Решение.}\\
+$(a):$\\
+\[\lim \limits_{x \to 4} \frac{x^2-3x-4}{x^3-6x^2+32}=\lim \limits_{x \to 4} \frac{(x-4)\cdot(x+1)}{(x-4)^2 \cdot(x+2)} =\infty \]\\
+$(b):$\\
+\[\lim \limits_{x \to 0} \frac{\sqrt{1-x}-\sqrt{1+x}}{x}=\lim \limits_{x \to 0} \frac{\frac{\sqrt{1-x}}{x}-\frac{\sqrt{1+x}}{x}}{1}=\lim \limits_{x \to 0} \frac{-1}{1}=-1\]\\
+\begin{center}
+
+\textbf{Задача № 3.}
+
+\end{center}\\
+\textbf{Условие.}\\
+$(a):$ Показать, что данные функции $f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими при указанном стремлении аргумента.\\
+$(b):$ Для каждой функции $f(x)$ и $g(x)$ записать главную часть (эквивалентную ей функцию) вида $C(x- x_0)^\alpha$ при $x \longrightarrow x_0$ или $Cx^\alpha$ при $x \longrightarrow \infty $, указать их порядки малости(роста).\\
+$(c):$ Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.\\
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+№Варианта & функции $f(x)$ и $g(x)$  & стремление \\ 
+9 & $f(x)=2x^3-5x^2+1,g(x)=\frac{1}{1-\cos\frac{1}{\sqrt{x-1}}}$ & x\longrightarrow\infty \\
+\hline 
+\end{tabular} 
+\end{center}\\
+\textbf {Решение.}\\
+$(a):$ Покажем, что $f(x)$ и $g(x)$ бесконечно большие функции,\\
+\begin{center}
+\[\lim \limits_{x \to \infty} f(x)= \lim \limits_{x \to \infty} 2x^3-5x^2+1;\lim \limits_{x} \to \infty}(1)^{-5\cdot x^2}=1 \longrightarrow \lim \limits_{x} \to \infty} 2x^3-5x^2+1=\infty;\]\\
+\[\lim \limits_{x \to \infty} g(x)= \lim \limits_{x \to \infty}\frac{1}{1-\cos\frac{1}{\sqrt{x-1}}}=\infty;\]\\ 
+\end{center}
+$(b):$ \[f(x)\thicksim 2x^3 ,\text{при } x\longrightarrow\infty;\]\\
+\[g(x)\thicksim x ,\text{при } x\longrightarrow\infty;\]\\
+$(c):$ Для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их отношения при указанном
+стремлении\\
+\[\lim \limits_{x \to \infty} \frac{f(x)}{g(x)}\]\\
+Применим эквивалентности, определенные в пункте $(b):$, получим\\
+\[\lim \limits_{x \to \infty} \frac{f(x)}{g(x)}=\lim \limits_{x \to \infty}\ \frac{2x^3}{x}=\lim \limits_{x \to \infty}\ 2x^2=\infty;\]\\
+Отсюда, $f(x)$ есть бесконечно большая функция более высокого порядка роста, чем $g(x)$.
+
+
+
+%=================================================================================================================================
+%\subsection{Приложения дифференциального исчисления.}
+%\input{src / part3. tex}
+
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{book01} {\color{red}\href{https://ru.m.wikibooks.org/wiki/Математические_формулы_в_LaTeX}{wikipedia}.}
+\bibitem{book02} {\color{red}\href{https://www.mccme.ru/free-books/llang/newllang.pdf}{Львовский С.М. Набор и вёрстка в системе \LaTeX, 2003 c}.}
+\bibitem{book03} {\color{red}\href{https://www.youtube.com/watch?v=I5LM0HU2Ugo}{Курс по \LaTeX на Ютуб}.}
+\end{thebibliography}
+
+\end{document}
